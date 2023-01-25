@@ -1,16 +1,15 @@
 package com.factoriaf5.rps.models;
 
-public class Paper {
-    private String name = "Papel";
+public class Paper extends Figure {
+    
+    private final String type;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public Object getType() {
+        return type;
     }
 
     public Paper() {
+        this.type = "papel";
     }
+
 }

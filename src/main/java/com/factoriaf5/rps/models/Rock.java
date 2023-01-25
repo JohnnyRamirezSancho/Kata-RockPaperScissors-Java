@@ -1,16 +1,15 @@
 package com.factoriaf5.rps.models;
 
-public class Rock {
-    private String name = "Roca";
+public class Rock extends Figure{
 
-    public String getName() {
-        return name;
-    }
+    private final String type;
 
-    public void setName(String name) {
-        this.name = name;
+    public Object getType() {
+        return type;
     }
 
     public Rock() {
-    }    
+        this.type = "roca";
+    }
+  
 }

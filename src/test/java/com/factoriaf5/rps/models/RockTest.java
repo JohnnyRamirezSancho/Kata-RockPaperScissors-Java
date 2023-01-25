@@ -8,7 +8,8 @@ public class RockTest {
     
     @Test
     public void myRock_is_Roca() {
-        Rock myRock = new Rock();
-        assertEquals("Roca", myRock.getName());
-    }
+        Rock roca = new Rock();
+        assertTrue(roca instanceof Rock);
+        assertEquals("roca", roca.getType());
+   }
 }
