@@ -7,9 +7,9 @@ import org.junit.Test;
 public class RockTest {
     
     @Test
-    public void myRock_is_Roca() {
-        Rock roca = new Rock();
-        assertTrue(roca instanceof Rock);
-        assertEquals("roca", roca.getType());
+    public void miRoca_is_roca() {
+        Rock miRoca = new Rock();
+        assertTrue(miRoca instanceof Rock);
+        assertEquals("roca", miRoca.getType());
    }
 }
