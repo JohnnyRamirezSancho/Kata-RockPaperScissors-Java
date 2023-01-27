@@ -10,24 +10,63 @@ public class Game {
     private Figure figure1;
     private Figure figure2;
     private String winner;
-       
+    private String showWinner;
+
     public Game(Player player1, Player player2, String figurePlayer1, String figurePlayer2) {
         this.player1 = player1;
         this.player2 = player2;
         this.figure1 = this.player1.choose(figurePlayer1);
         this.figure2 = this.player2.choose(figurePlayer2);
-        if(this.figure1.getType()=="roca")
-            if(this.figure2.getType()=="tijeras") {
-                winner =  "Player1 win!";
+        combat(figurePlayer1, figurePlayer2);
+    }
+
+    public String combat(String figurePlayer1, String figurePlayer2) {
+        if (this.figure1.getType() == "roca") {
+            if (this.figure2.getType() == "tijeras") {
+                setWinner("Player1 win!");
             }
-            if(this.figure2.getType()=="roca") {
-                winner =  "Player1 and Player2, tied!";
+            if (this.figure2.getType() == "roca") {
+                setWinner("Player1 and Player2, tied!");
             }
-            if(this.figure2.getType()=="papel") {
-                winner =  "Player2 win!";
+            if (this.figure2.getType() == "papel") {
+                setWinner("Player2 win!");
             }
         }
+        
+        if (this.figure1.getType() == "papel") {
+            if (this.figure2.getType() == "roca") {
+                setWinner("Player1 win!");
+            }
+            if (this.figure2.getType() == "papel") {
+                setWinner("Player1 and Player2, tied!");
+            }
+            if (this.figure2.getType() == "tijeras") {
+                setWinner("Player2 win!");
+            }
+        }
+
+        if (this.figure1.getType() == "tijeras") {
+            if (this.figure2.getType() == "papel") {
+                setWinner("Player1 win!");
+            }
+            if (this.figure2.getType() == "tijeras") {
+                setWinner("Player1 and Player2, tied!");
+            }
+            if (this.figure2.getType() == "roca") {
+                setWinner("Player2 win!");
+            }
+        }
+        setShowWinner("Player1: " + this.figure1.getType() + "\n" + "Player2: " + this.figure2.getType() + "\n" + getWinner());
+        return getWinner();
+    }
     
+    public String getShowWinner() {
+        return showWinner;
+    }
+
+    public void setShowWinner(String showWinner) {
+        this.showWinner = showWinner;
+    }
 
     public String getWinner() {
         return winner;
@@ -37,10 +76,10 @@ public class Game {
         this.winner = winner;
     }
 
-
     public Player getPlayer1() {
         return player1;
     }
+
     public Player getPlayer2() {
         return player2;
     }
@@ -52,5 +91,4 @@ public class Game {
     public Figure getFigure2() {
         return figure2;
     }
-
 }
