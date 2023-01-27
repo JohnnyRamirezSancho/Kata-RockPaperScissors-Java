@@ -31,6 +31,12 @@ public class Game {
             if (this.figure2.getType() == "papel") {
                 setWinner("Player2 win!");
             }
+            if (this.figure2.getType() == "lagarto") {
+                setWinner("Player1 win!");
+            }
+            if (this.figure2.getType() == "Spock") {
+                setWinner("Player2 win!");
+            }
         }
         
         if (this.figure1.getType() == "papel") {
@@ -42,6 +48,12 @@ public class Game {
             }
             if (this.figure2.getType() == "tijeras") {
                 setWinner("Player2 win!");
+            }
+            if (this.figure2.getType() == "lagarto") {
+                setWinner("Player2 win!");
+            }
+            if (this.figure2.getType() == "Spock") {
+                setWinner("Player1 win!");
             }
         }
 

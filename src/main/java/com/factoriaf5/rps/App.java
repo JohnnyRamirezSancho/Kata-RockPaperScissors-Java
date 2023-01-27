@@ -11,7 +11,7 @@ public class App
 
         Player player1 = new Player();
         Player player2 = new Player();
-        Game fight = new Game(player1, player2, "papel", "tijeras");
+        Game fight = new Game(player1, player2, null, null);
         System.out.println(fight.getShowWinner());
     }
 }

@@ -1,8 +1,8 @@
 package com.factoriaf5.rps.models;
 
 public class Player {
-    private String[] figures = { "roca", "papel", "tijeras" };
-    private int index = (int) (Math.random() * 3);
+    private String[] figures = { "roca", "papel", "tijeras", "lagarto", "Spock"};
+    private int index = (int) (Math.random() * figures.length);
 
     public Figure choose(String string) {
         if (string == null) {
@@ -17,6 +17,12 @@ public class Player {
         }
         if (string == "tijeras") {
             return new Scissors();
+        }
+        if (string == "lagarto") {
+            return new Lizard();
+        }
+        if (string == "Spock") {
+            return new Spock();
         }
         return null;
     }

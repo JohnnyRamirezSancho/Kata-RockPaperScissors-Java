@@ -45,6 +45,19 @@ public class GameTest {
         assertEquals("Player1 and Player2, tied!", newGame.getWinner());
     }
 
+    @Test
+    public void player1_choose_rock_and_player2_choose_lizard_wind_player1() {
+        Game newGame = new Game(player1, player2, "roca", "lagarto");
+        assertEquals("Player1 win!", newGame.getWinner());
+    }
+
+    @Test
+    public void player1_choose_rock_and_player2_choose_Spock_win_player2() {
+        Game newGame = new Game(player1, player2, "roca", "Spock");
+        assertEquals("Player2 win!", newGame.getWinner());
+    }
+
+
 
     
     @Test
@@ -63,6 +76,18 @@ public class GameTest {
     public void player1_choose_paper_and_player2_choose_paper_then_tied() {
         Game newGame = new Game(player1, player2, "papel", "papel");
         assertEquals("Player1 and Player2, tied!", newGame.getWinner());
+    }
+
+    @Test
+    public void player1_choose_paper_and_player2_choose_lizard_win_player2() {
+        Game newGame = new Game(player1, player2, "papel", "lagarto");
+        assertEquals("Player2 win!", newGame.getWinner());
+    }
+
+    @Test
+    public void player1_choose_paper_and_player2_choose_Spock_win_player1() {
+        Game newGame = new Game(player1, player2, "papel", "Spock");
+        assertEquals("Player1 win!", newGame.getWinner());
     }
 
 
@@ -85,9 +110,24 @@ public class GameTest {
         assertEquals("Player1 and Player2, tied!", newGame.getWinner());
     }
 
+
+
+    @Test
+    public void player1_by_computer() {
+        Game newGame = new Game(player1, player2, null, "roca");
+        assertNotNull(newGame.getFigure1().getType());
+    }
+
     @Test
     public void player2_by_computer() {
         Game newGame = new Game(player1, player2, "roca", null);
         assertNotNull(newGame.getFigure1().getType());
+    }
+
+    @Test
+    public void player1_and_player2_by_computer() {
+        Game newGame = new Game(player1, player2, null, null);
+        assertNotNull(newGame.getFigure1().getType());
+        assertNotNull(newGame.getFigure2().getType());
     }
 }
